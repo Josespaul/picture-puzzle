@@ -13,7 +13,7 @@ var modules = new Vue({
 
     created: function() {
         document.getElementById('container').style.cursor = 'default'
-            //swal("Hola !", "This Puzzle Consists of a big picure hidden behind the boxes, the puzzle completes when you answer the 'Puzzle Question', but attempts for this is limited, keep an eye on the score. There are three clues, when answered correct will let you open a box and reveal a part of the big picture.")
+        swal("Hola !", "This Puzzle Consists of a big picure hidden behind the boxes, the puzzle completes when you answer the 'Puzzle Question', but attempts for this is limited, keep an eye on the score. There are three clues, when answered correct will let you open a box and reveal a part of the big picture.")
     },
 
     methods: {
