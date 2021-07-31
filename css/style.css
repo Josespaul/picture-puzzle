@@ -20,6 +20,7 @@ h2 {
     position: relative;
     width: 30vw;
     height: 30vw;
+    cursor: pointer;
 }
 
 #pane1 {
