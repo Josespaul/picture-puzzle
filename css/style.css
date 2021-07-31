@@ -47,7 +47,7 @@ h2 {
     right: 20vw;
     width: 10vw;
     height: 10vw;
-    background: lightgray;
+    background: rgb(231, 231, 231);
     border-style: solid;
     border-width: 1px;
     justify-content: center;
@@ -100,6 +100,27 @@ h2 {
 .button2:hover {
     background-color: #009ed3;
     color: white;
+}
+
+
+/* Swal configs */
+
+.swal-button {
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: #008CBA;
+    font-size: 12px;
+    border: 1px solid #008CBA;
+}
+
+.swal-text {
+    background-color: #ffffff;
+    font-size: 1vw;
+    padding: 0.5vw;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #61534e;
 }
 
 
@@ -160,18 +181,28 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
+    body {
+        font: 62.5%/1.3em 'Dosis', sans-serif;
+        width: 100%;
+        margin: 10px auto;
+        background-color: #fffffe;
+    }
     h1 {
-        font: 8vw 'Sacramento', cursive !important;
+        font: 12vw 'Sacramento', cursive !important;
         background-color: #ffff;
         margin-top: 1%;
     }
+    h2 {
+        font-size: 5vw;
+    }
     #pane1 {
         width: 100%;
-        display: inline-block;
+        display: block;
+        margin-left: 0%;
     }
     #pane2 {
         width: 100%;
-        display: inline-block;
+        display: block;
     }
     #container {
         position: relative;
@@ -189,7 +220,23 @@ h2 {
         right: 10px;
         width: 30vw;
         height: 30vw;
-        background: lightgray;
+    }
+    .input {
+        width: 40vw;
+        height: 9vw;
+    }
+    .button {
+        width: 20vw;
+        height: 10vw;
+    }
+    .swal-text {
+        background-color: #ffffff;
+        font-size: 5vw;
+        padding: 0.5vw;
+        display: block;
+        margin: 22px;
+        text-align: center;
+        color: #61534e;
     }
     .block_1 {
         position: absolute;

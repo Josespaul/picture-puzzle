@@ -18,70 +18,73 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css" media="screen">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
     <div id="modules">
         <center>
             <h1>Big Picture</h1>
-            <h2 style="padding-bottom: 1vw;">Passage : John 5:1-10</h2>
+            <h2 style="padding-bottom: 1vw; color:grey">Passage : John 5:1-10</h2>
             <h2 style="padding-bottom: 1vw;"> Score : {{ points }} </h2>
         </center>
         <div id="pane1">
-            <div id="container">
-                <div id="main_image">
-                    <img src="image/1.jpg" width="100%" width="100%">
+            <center>
+                <div id="container">
+                    <div id="main_image">
+                        <img src="image/1.jpg" width="100%" width="100%">
+                    </div>
+                    <div id="block_1" class="overlay_image block_1" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[1]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_2" class="overlay_image block_2" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[2]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_3" class="overlay_image block_3" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[3]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_4" class="overlay_image block_4" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[4]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_5" class="overlay_image block_5" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[5]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_6" class="overlay_image block_6" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[6]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_7" class="overlay_image block_7" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[7]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_8" class="overlay_image block_8" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[8]" class="far fa-times-circle fa-2x"></i></div>
+                    <div id="block_9" class="overlay_image block_9" v-on:click=remove_block($event)>
+                        <i v-show="remove_block_show[9]" class="far fa-times-circle fa-2x"></i></div>
                 </div>
-                <div id="block_1" class="overlay_image block_1" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[1]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_2" class="overlay_image block_2" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[2]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_3" class="overlay_image block_3" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[3]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_4" class="overlay_image block_4" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[4]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_5" class="overlay_image block_5" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[5]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_6" class="overlay_image block_6" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[6]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_7" class="overlay_image block_7" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[7]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_8" class="overlay_image block_8" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[8]" class="far fa-times-circle fa-2x"></i></div>
-                <div id="block_9" class="overlay_image block_9" v-on:click=remove_block($event)>
-                    <i v-show="remove_block_show[9]" class="far fa-times-circle fa-2x"></i></div>
-            </div>
+            </center>
         </div>
 
         <div id="pane2">
-            <div style="width: 30vw;">
+            <div id="pane2-contents">
                 <center>
                     <h2>Puzzle Question</h2>
                     <p style="font-size: 20px;">Some Question will be asked here</p>
                     <input class="input" id="main_input" v-model="answer" placeholder="your answer here">
                     <button class="button button1" v-on:click="check_main_input(answer)">Submit</button>
                     <br><br><br>
-                    <br><br><br>
 
 
                     <h2> Clue Opener Question</h2>
-                    <p style="font-size: 20px; "> 1. This is the first direct Question, some question here ? </p>
+                    <p style="font-size: 20px; "> 1. This is the first direct Question ?? </p>
                     <input class="input" id="indirect_input_1 " v-model="clue[1]" placeholder="your answer here ">
                     <button class="button button2" v-on:click="check_clue_input(1,'indirect_input_1',clue[1]) ">Submit</button>
 
-                    <p style="font-size: 20px; "> 2. This is the Second direct Question, some question here ?? </p>
+                    <p style="font-size: 20px; "> 2. This is the Second direct Question ?? </p>
                     <input class="input" id="indirect_input_2 " v-model="clue[2]" placeholder="your answer here ">
                     <button class="button button2" v-on:click="check_clue_input(2,'indirect_input_2',clue[2]) ">Submit</button>
 
 
-                    <p style="font-size: 20px; "> 3. This is the third direct Question, some question here, Question can be</p>
-                    <p style="font-size: 20px; ">in two lines too ??? </p>
+                    <p style="font-size: 20px; "> 3. This is the third direct Question ???</p>
                     <input class="input" id="indirect_input_3 " v-model="clue[3]" placeholder="your answer here ">
                     <button class="button button2" v-on:click="check_clue_input(3,'indirect_input_3',clue[3]) ">Submit</button>
                 </center>
             </div>
         </div>
     </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     <!-- Module -->
     <script src="js/bigpicture.js "></script>

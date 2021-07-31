@@ -11,27 +11,33 @@ var modules = new Vue({
         points: 100
     },
 
-    created: function() {},
+    created: function() {
+        swal("Hola !", "This Puzzle Consists of a big picure hidden behind the boxes, the puzzle completes when you answer the 'Puzzle Question', but attempts for this is limited, keep an eye on the score. There are three clues, when answered correct will let you open a box and reveal a part of the big picture.")
+    },
 
     methods: {
         check_main_input(data) {
             if (data == this.clue_ans[0]) {
-                alert("Game Complete")
+                swal("Game Complete", "score: " + this.points, "info")
             } else {
                 this.points = this.points - 20
                 data = ''
+                swal("Wrong Answer", "oops! Try Again", "warning")
                 if (this.points <= 0) {
                     this.points = 0
-                    alert("Game Over !")
+                    swal("Game Over", "", "error")
                 }
             }
         },
 
         check_clue_input(index, id, ans) {
             if (ans == this.clue_ans[index]) {
-                alert("Open Any one Box")
+                window.scrollTo(0, 0);
+                swal('Clue ' + index, "You can now open a box in the big picture", "success");
                 this.remove_block_mode = true
                 this.remove_block_show = this.remove_block_on
+            } else {
+                swal("Wrong Answer", "oops! Try Again", "warning")
             }
         },
 
