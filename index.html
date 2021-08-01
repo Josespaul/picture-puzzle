@@ -98,6 +98,10 @@
                         <input class="input" id="indirect_input_4" v-model="clue_input[4]" placeholder="your answer here">
                         <button id="indirect_button_4" class="button button2" v-on:click="check_clue_input(4,'indirect_input_4',clue_input[4])">Submit</button>
                     </div>
+
+                    <div v-show="clue_show[5]">
+                        <h2 style="font-weight: lighter;">No Clues Available</h2>
+                    </div>
                 </center>
             </div>
         </div>
