@@ -25,8 +25,8 @@
     <div id="modules">
         <center>
             <h1>Big Picture</h1>
-            <h2 style="padding-bottom: 1vw; color:grey">Passage : John 5:1-10</h2>
-            <h2 style="padding-bottom: 1vw;"> Score : {{ points }} </h2>
+            <h2 style="padding-bottom: 0vw; color:grey">Passage : John 5:1-10</h2>
+            <h2 style="padding-bottom: 0vw;"> Score : {{ points }} </h2>
         </center>
         <div id="pane1">
             <center>
@@ -61,25 +61,43 @@
         <div id="pane2">
             <div id="pane2-contents">
                 <center>
-                    <h2>Puzzle Question</h2>
-                    <p style="font-size: 20px;">Some Question will be asked here</p>
-                    <input class="input" id="main_input" v-model="answer" placeholder="your answer here">
-                    <button id="main_input_submit" class="button button1" v-on:click="check_main_input(answer)">Submit</button>
-                    <br><br><br>
+                    <h2><i class="far fa-question-circle "></i> Puzzle Question</h2>
+                    <p style="font-size: 20px;">{{ puzzle_data["puzzle_question"] }}</p>
+                    <input class="input" id="main_input" v-model="clue_input[0]" placeholder="your answer here">
+                    <button id="main_input_submit" class="button button1" v-on:click="check_main_input(clue_input[0])">Submit</button>
+                    <br><br><br><br><br>
 
+                    <h2><i class="fas fa-puzzle-piece"></i> Clue Opener Question</h2>
+                    <div v-show="clue_show[0]">
+                        <h2 style="font-weight: lighter;">Loading Clue in {{ timer }} Sec</h2>
+                    </div>
+                    <div v-show="clue_show[1]">
+                        <h2>- Clue 1 -</h2>
+                        <p style="font-size: 20px; "> {{ puzzle_data["clue1_question"] }} </p>
+                        <input class="input" id="indirect_input_1" v-model="clue_input[1]" placeholder="your answer here">
+                        <button id="indirect_button_1" class="button button2" v-on:click="check_clue_input(1,'indirect_input_1',clue_input[1])">Submit</button>
+                    </div>
 
-                    <h2> Clue Opener Question</h2>
-                    <p style="font-size: 20px; "> 1. This is the first direct Question ?? </p>
-                    <input class="input" id="indirect_input_1" v-model="clue[1]" placeholder="your answer here">
-                    <button id="indirect_button_1" class="button button2" v-on:click="check_clue_input(1,'indirect_input_1',clue[1])">Submit</button>
+                    <div v-show="clue_show[2]">
+                        <h2>- Clue 2 -</h2>
+                        <p style="font-size: 20px; "> {{ puzzle_data["clue2_question"] }} </p>
+                        <input class="input" id="indirect_input_2" v-model="clue_input[2]" placeholder="your answer here">
+                        <button id="indirect_button_2" class="button button2" v-on:click="check_clue_input(2,'indirect_input_2',clue_input[2])">Submit</button>
+                    </div>
 
-                    <p style="font-size: 20px; "> 2. This is the Second direct Question ?? </p>
-                    <input class="input" id="indirect_input_2" v-model="clue[2]" placeholder="your answer here">
-                    <button id="indirect_button_2" class="button button2" v-on:click="check_clue_input(2,'indirect_input_2',clue[2])">Submit</button>
+                    <div v-show="clue_show[3]">
+                        <h2>- Clue 3 -</h2>
+                        <p style="font-size: 20px; "> {{ puzzle_data["clue3_question"] }} </p>
+                        <input class="input" id="indirect_input_3" v-model="clue_input[3]" placeholder="your answer here">
+                        <button id="indirect_button_3" class="button button2" v-on:click="check_clue_input(3,'indirect_input_3',clue_input[3])">Submit</button>
+                    </div>
 
-                    <p style="font-size: 20px; "> 3. This is the third direct Question ???</p>
-                    <input class="input" id="indirect_input_3" v-model="clue[3]" placeholder="your answer here">
-                    <button id="indirect_button_3" class="button button2" v-on:click="check_clue_input(3,'indirect_input_3',clue[3])">Submit</button>
+                    <div v-show="clue_show[4]">
+                        <h2>- Clue 4 -</h2>
+                        <p style="font-size: 20px; "> {{ puzzle_data["clue4_question"] }} </p>
+                        <input class="input" id="indirect_input_4" v-model="clue_input[4]" placeholder="your answer here">
+                        <button id="indirect_button_4" class="button button2" v-on:click="check_clue_input(4,'indirect_input_4',clue_input[4])">Submit</button>
+                    </div>
                 </center>
             </div>
         </div>

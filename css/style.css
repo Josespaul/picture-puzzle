@@ -1,5 +1,5 @@
 body {
-    font: 62.5%/1.3em 'Dosis', sans-serif;
+    font: 120.5%/1.3em 'Dosis', sans-serif;
     width: 100%;
     margin: 10px auto;
     background-color: #fffffe;
@@ -31,7 +31,8 @@ h2 {
 }
 
 #pane2 {
-    width: 35%;
+    width: 25%;
+    margin-left: 5%;
     display: inline-block;
     vertical-align: middle;
 }
@@ -183,7 +184,7 @@ h2 {
 
 @media only screen and (max-width: 600px) {
     body {
-        font: 62.5%/1.3em 'Dosis', sans-serif;
+        font: 100.5%/1.3em 'Dosis', sans-serif;
         width: 100%;
         margin: 10px auto;
         background-color: #fffffe;
@@ -202,6 +203,7 @@ h2 {
         margin-left: 0%;
     }
     #pane2 {
+        margin-left: 0%;
         width: 100%;
         display: block;
     }
