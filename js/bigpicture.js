@@ -36,12 +36,13 @@ var modules = new Vue({
 
     methods: {
         load_clue() {
+            /* Initial clue timer expire callback */
             this.clue_show[0] = false
             this.clue_show[1] = true
         },
 
         check_main_input(data) {
-            if (data.toLowerCase() == this.puzzle_data["puzzle_ans"]) {
+            if (data.toLowerCase().split(' ').join('') == this.puzzle_data["puzzle_ans"]) {
                 swal("Game Complete", "score: " + this.points, "info")
                 document.getElementById('blocks').style.display = 'none'
                 window.scrollTo(0, 0);
@@ -57,7 +58,7 @@ var modules = new Vue({
         },
 
         check_clue_input(index, id, ans) {
-            if (ans.toLowerCase() == this.puzzle_data["clue_ans"][index]) {
+            if (ans.toLowerCase().split(' ').join('') == this.puzzle_data["clue_ans"][index]) {
                 window.scrollTo(0, 0);
                 swal('Clue ' + index, "You can now open a box in the big picture", "success");
                 this.remove_block_mode = true

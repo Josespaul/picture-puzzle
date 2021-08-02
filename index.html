@@ -25,7 +25,6 @@
     <div id="modules">
         <center>
             <h1>Big Picture</h1>
-            <h2 style="padding-bottom: 0vw; color:grey">Passage : John 5:1-10</h2>
             <h2 style="padding-bottom: 0vw;"> Score : {{ points }} </h2>
         </center>
         <div id="pane1">
@@ -101,6 +100,7 @@
 
                     <div v-show="clue_show[5]">
                         <h2 style="font-weight: lighter;">No Clues Available</h2>
+                        <h2> Read Passage : {{ puzzle_data["reference"] }} </h2>
                     </div>
                 </center>
             </div>
