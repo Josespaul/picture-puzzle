@@ -1,0 +1,13 @@
+{
+    "total_points": 100,
+    "reference": "John 4: 43-54",
+
+    "puzzle_question": "Alone I came without an answer and alone I left with an  answer. Who am I?",
+    "puzzle_ans": "nobleman",
+
+    "clue1_question": "Who has no honour in his home town?",
+    "clue2_question": "Who had seen the miracles done by Jesus in Jerusalem at the passover and welcomed him?",
+    "clue3_question": "As per Jesus one will believe when he sees ______",
+    "clue4_question": "Where did Jesus reveal the second of his signs through which he revealed his glory?",
+    "clue_ans": [null, "prophet", "galileans", "wonders", "cana"]
+}
